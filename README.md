@@ -37,17 +37,17 @@ The repo contains:
 ## 🔬 Method in 30 seconds
 
 1. **Train** a conventional segmentation network (U‑Net, nnUNet, Swin‑UNETR, …) producing per‑voxel softmax probabilities.
-2. **Calibrate** a threshold λ on a held‑out set so that the empirical **false‑negative loss**
+2. **Calibrate** a threshold $\lambda$ on a held‑out set so that the empirical **false‑negative loss**
 
    $$!
    L_\text{FNR}(λ)=1-\frac{|Y∩C_λ(X)|}{|Y|}
    $$
 
-   does not exceed α.
+   does not exceed $\alpha$.
 3. **Wrap** the original prediction with the conformal mask $C_{\hat λ}(X)$.
-4. **Guarantee** $ \mathbb E[L_\text{FNR}] ≤ α$ for *all* future samples – no hidden distributional tricks.
+4. **Guarantee** $\mathbb E[L_\text{FNR}] ≤ \alpha$ for *all* future samples – no distributional assumptions.
 
-See the paper for proofs and a full derivation.
+See the paper for details.
 
 ---
 
